@@ -2,926 +2,653 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. S. Pitchumani Angayarkanni — AI Fellow Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. S. Pitchumani Angayarkanni — Google HE Faculty AI Fellow</title>
+<meta name="description" content="Professor of Computer Science & Engineering at AVIT, VMRF. Google Higher Education Faculty AI Fellow (EMEA 2026), IEEE Senior Member, RAGN Global Ambassador for India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Schibsted+Grotesk:wght@400;500;600&family=Noto+Serif+Tamil:wght@500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #080f1e;
-  --cream: #eef2f8;
-  --gold: #5b9bd5;
-  --gold-light: #7ab8f5;
-  --rust: #1a5fa8;
-  --sage: #1e3a6e;
-  --slate: #0d1f3c;
-  --warm-white: #f0f5fc;
-  --muted: #5b7099;
-  --border: rgba(91,155,213,0.22);
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --ink: #0b1730;
+  --navy: #0f2347;
+  --navy-2: #16305c;
+  --paper: #f6f8fc;
+  --mist: #e8eef8;
+  --blue: #2f6fd0;
+  --sky: #9cc2f5;
+  --text-2: #4a5b7a;
+  --line: #d3ddec;
+  --line-dark: rgba(156,194,245,0.18);
+  --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --sans: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --tamil: 'Noto Serif Tamil', 'Latha', serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
-  background: var(--cream);
+  background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.7;
-  overflow-x: hidden;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 3px; }
 
-/* ── NOISE TEXTURE OVERLAY ── */
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none; z-index: 999; opacity: 0.6;
-}
+.container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
 
 /* ── NAV ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(11,23,48,0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line-dark);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.nav-inner {
+  max-width: 1180px; margin: 0 auto; padding: 0.95rem 2.5rem;
   display: flex; justify-content: space-between; align-items: center;
-  padding: 1.2rem 4rem;
-  background: rgba(238,242,248,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
 }
-
 .nav-brand {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  color: var(--gold);
-  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 1.2rem; font-weight: 500;
+  color: #fff; text-decoration: none;
 }
-
-.nav-links {
-  display: flex; gap: 2.5rem; list-style: none;
-}
+.nav-links { display: flex; gap: 1.8rem; list-style: none; }
 .nav-links a {
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.25s;
+  font-size: 0.88rem; color: rgba(255,255,255,0.68);
+  text-decoration: none; transition: color .2s;
 }
-.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover { color: #fff; }
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  background: var(--ink);
+  color: #fff;
   position: relative;
   overflow: hidden;
+  padding: 9rem 0 0;
 }
-
-.hero-left {
-  background: var(--slate);
-  display: flex; flex-direction: column;
-  justify-content: flex-end;
-  padding: 8rem 5rem 5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-left::before {
+.hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 30% 70%, rgba(91,155,213,0.18) 0%, transparent 65%),
-              radial-gradient(ellipse at 80% 20%, rgba(30,58,110,0.35) 0%, transparent 55%);
+  background:
+    radial-gradient(60rem 30rem at 85% 10%, rgba(47,111,208,0.28), transparent 60%),
+    radial-gradient(40rem 30rem at 0% 100%, rgba(22,48,92,0.9), transparent 70%);
+  pointer-events: none;
 }
-
-.hero-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.8rem;
+.hero-grid {
   position: relative;
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr;
+  gap: 4rem;
+  align-items: end;
 }
-.hero-eyebrow::before {
-  content: ''; display: inline-block;
-  width: 32px; height: 1px;
-  background: var(--gold);
-  vertical-align: middle; margin-right: 0.75rem;
+.hero-text { padding-bottom: 4.5rem; }
+
+.fellow-tag {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.9rem; font-weight: 500;
+  color: var(--sky);
+  padding: 0.45rem 1rem 0.45rem 0.55rem;
+  border: 1px solid var(--line-dark);
+  border-radius: 100px;
+  background: rgba(47,111,208,0.12);
+  margin-bottom: 2rem;
+}
+.fellow-tag .dot {
+  width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--blue); color: #fff;
+  font-family: var(--serif); font-weight: 600; font-size: 0.85rem;
 }
 
 .hero-name {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  font-weight: 300;
-  line-height: 1.08;
-  color: var(--warm-white);
-  position: relative;
-  margin-bottom: 0.4rem;
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: clamp(2.8rem, 6.2vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-variation-settings: 'opsz' 72;
 }
+.hero-name .first { display: block; font-weight: 300; color: rgba(255,255,255,0.75); font-size: 0.55em; letter-spacing: -0.01em; margin-bottom: 0.25em; }
+.hero-tamil {
+  font-family: var(--tamil);
+  font-size: 1.15rem;
+  color: var(--sky);
+  margin: 1rem 0 1.6rem;
+  opacity: 0.9;
+}
+.hero-role {
+  font-size: 1.08rem;
+  color: rgba(255,255,255,0.78);
+  max-width: 44ch;
+  margin-bottom: 2.2rem;
+}
+.hero-role strong { color: #fff; font-weight: 500; }
 
-.hero-name em {
-  font-style: italic;
-  color: var(--gold-light);
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 3rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--sans); font-size: 0.95rem; font-weight: 500;
+  text-decoration: none;
+  padding: 0.75rem 1.4rem; border-radius: 8px;
+  transition: background .2s, border-color .2s, color .2s;
 }
-
-.hero-title {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 300;
-  color: rgba(250,248,244,0.55);
-  letter-spacing: 0.04em;
-  margin-bottom: 3rem;
-  position: relative;
-}
+.btn-primary { background: #fff; color: var(--ink); }
+.btn-primary:hover { background: var(--sky); }
+.btn-ghost { border: 1px solid rgba(255,255,255,0.25); color: #fff; }
+.btn-ghost:hover { border-color: #fff; }
 
 .hero-stats {
-  display: flex; gap: 2.5rem;
-  position: relative;
-  padding-top: 2.5rem;
-  border-top: 1px solid rgba(184,137,42,0.3);
+  display: grid; grid-template-columns: repeat(4, auto);
+  justify-content: start; gap: 2.8rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--line-dark);
 }
-
-.stat-item {}
 .stat-num {
-  font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 300;
-  color: var(--gold-light);
-  line-height: 1;
+  display: block;
+  font-family: var(--serif); font-weight: 300;
+  font-size: 2.6rem; line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+.stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+/* portrait */
+.portrait-wrap { position: relative; align-self: end; }
+.portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 999px 999px 0 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--navy-2), var(--navy));
+  border: 1px solid var(--line-dark);
+  border-bottom: none;
+}
+.portrait img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 20%;
   display: block;
 }
-.stat-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(250,248,244,0.45);
+.portrait .monogram {
+  display: none;
+  position: absolute; inset: 0;
+  place-items: center;
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: clamp(5rem, 11vw, 9rem);
+  color: rgba(156,194,245,0.35);
 }
+.portrait.no-photo img { display: none; }
+.portrait.no-photo .monogram { display: grid; }
 
-/* hero right */
-.hero-right {
-  background: var(--warm-white);
-  display: flex; flex-direction: column;
-  justify-content: center;
-  padding: 10rem 5rem 5rem 6rem;
-  position: relative;
-}
-
-.hero-right::before {
-  content: '"';
-  font-family: var(--font-display);
-  font-size: 22rem;
-  line-height: 1;
-  color: rgba(184,137,42,0.07);
+.portrait-card {
   position: absolute;
-  top: 4rem; left: 3rem;
-  pointer-events: none;
+  left: -2.5rem; bottom: 2.5rem;
+  background: var(--paper); color: var(--ink);
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+  box-shadow: 0 24px 50px -20px rgba(0,0,0,0.55);
+  max-width: 17rem;
 }
+.portrait-card .pc-kicker { font-size: 0.78rem; color: var(--blue); font-weight: 600; margin-bottom: 0.2rem; }
+.portrait-card .pc-title { font-family: var(--serif); font-size: 1.2rem; line-height: 1.25; }
 
-.hero-tagline {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1.45;
-  margin-bottom: 2rem;
-  position: relative;
-}
+/* hero load — the page's one orchestrated motion */
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero-text > * { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+.hero-text > *:nth-child(2) { animation-delay: .08s; }
+.hero-text > *:nth-child(3) { animation-delay: .16s; }
+.hero-text > *:nth-child(4) { animation-delay: .24s; }
+.hero-text > *:nth-child(5) { animation-delay: .32s; }
+.hero-text > *:nth-child(6) { animation-delay: .40s; }
+.portrait-wrap { animation: rise 1s .2s cubic-bezier(.2,.7,.2,1) both; }
 
-.hero-tagline strong {
-  font-style: normal;
-  font-weight: 600;
-  color: var(--rust);
+/* credential strip */
+.cred-strip { background: var(--mist); border-bottom: 1px solid var(--line); }
+.cred-strip ul {
+  list-style: none;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem;
+  padding: 1.3rem 0;
 }
+.cred-strip li { font-size: 0.92rem; color: var(--text-2); }
+.cred-strip li strong { color: var(--ink); font-weight: 600; }
 
-.hero-desc {
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 38ch;
-  margin-bottom: 3rem;
-}
-
-.badge-row {
-  display: flex; flex-wrap: wrap; gap: 0.5rem;
-  margin-bottom: 3rem;
-}
-.badge {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.32rem 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  color: var(--muted);
-  background: transparent;
-}
-
-.social-links {
-  display: flex; gap: 1rem; flex-wrap: wrap;
-}
-.social-link {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--slate);
-  text-decoration: none;
-  padding: 0.5rem 1.1rem;
-  border: 1px solid rgba(44,53,69,0.2);
-  border-radius: 4px;
-  transition: all 0.22s;
-}
-.social-link:hover {
-  background: var(--slate);
-  color: var(--warm-white);
-  border-color: var(--slate);
-}
-.social-link span { font-weight: 700; font-size: 0.8rem; }
-
-/* ── SECTION COMMON ── */
-section { padding: 8rem 0; }
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
-
-.section-label {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1rem;
-  display: flex; align-items: center; gap: 0.8rem;
-}
-.section-label::after {
-  content: ''; flex: 1; max-width: 60px; height: 1px;
-  background: var(--gold); opacity: 0.5;
-}
-
+/* ── SECTIONS ── */
+section { padding: 7rem 0; }
+.kicker { font-size: 0.95rem; font-weight: 500; color: var(--blue); margin-bottom: 0.6rem; }
 .section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
-  font-weight: 300;
-  line-height: 1.12;
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
   margin-bottom: 1rem;
+  max-width: 20ch;
 }
-.section-title em {
-  font-style: italic; color: var(--gold);
+.section-intro { color: var(--text-2); max-width: 60ch; margin-bottom: 3.5rem; font-size: 1.05rem; }
+.dark { background: var(--ink); color: #fff; }
+.dark .kicker { color: var(--sky); }
+.dark .section-intro { color: rgba(255,255,255,0.65); }
+
+/* ── ACCOLADES ── */
+.acc-feature {
+  display: grid; grid-template-columns: 1.35fr 1fr;
+  background: var(--navy); color: #fff;
+  border-radius: 16px; overflow: hidden;
+  margin-bottom: 1.5rem;
 }
+.acc-main { padding: 3rem 3rem 2.8rem; }
+.acc-main .meta { font-size: 0.9rem; color: var(--sky); margin-bottom: 0.9rem; }
+.acc-main h3 {
+  font-family: var(--serif); font-weight: 350;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem); line-height: 1.12;
+  margin-bottom: 1.1rem;
+}
+.acc-main p { color: rgba(255,255,255,0.72); max-width: 54ch; margin-bottom: 1.4rem; }
+.acc-side {
+  background: var(--navy-2);
+  padding: 2.6rem 2.6rem;
+  display: flex; flex-direction: column; justify-content: center; gap: 1.8rem;
+}
+.acc-side .status {
+  display: inline-block; font-size: 0.75rem; font-weight: 600;
+  padding: 0.15rem 0.55rem; border-radius: 4px;
+  background: rgba(156,194,245,0.16); color: var(--sky);
+  margin-bottom: 0.45rem;
+}
+.acc-side h4 { font-family: var(--serif); font-weight: 450; font-size: 1.3rem; line-height: 1.25; margin-bottom: 0.3rem; }
+.acc-side p { font-size: 0.9rem; color: rgba(255,255,255,0.62); line-height: 1.6; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip {
+  font-size: 0.78rem; font-weight: 500;
+  padding: 0.22rem 0.65rem; border-radius: 4px;
+  background: rgba(47,111,208,0.09); color: var(--blue);
+}
+.acc-main .chip, .dark .chip { background: rgba(156,194,245,0.14); color: var(--sky); }
+
+.acc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.acc-card {
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; padding: 1.8rem 1.9rem;
+}
+.acc-card .org { font-size: 0.85rem; color: var(--blue); font-weight: 500; margin-bottom: 0.4rem; }
+.acc-card h4 { font-family: var(--serif); font-weight: 450; font-size: 1.4rem; line-height: 1.2; margin-bottom: 0.5rem; }
+.acc-card p { font-size: 0.92rem; color: var(--text-2); }
 
 /* ── TIMELINE ── */
-#timeline { background: var(--warm-white); }
-
-.timeline-intro {
-  max-width: 50ch;
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 5rem;
-}
-
-.timeline-wrap {
-  position: relative;
-  padding-left: 3rem;
-}
-
-.timeline-wrap::before {
-  content: '';
-  position: absolute; left: 0; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--gold) 8%, var(--gold) 92%, transparent);
-}
-
+#timeline { background: #fff; }
+.timeline { list-style: none; position: relative; }
 .tl-entry {
-  position: relative;
-  display: grid;
-  grid-template-columns: 100px 1fr;
+  display: grid; grid-template-columns: 7rem 1fr;
   gap: 2.5rem;
-  margin-bottom: 4.5rem;
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  padding: 2.4rem 0;
+  border-top: 1px solid var(--line);
 }
-.tl-entry.visible { opacity: 1; transform: translateY(0); }
-
-.tl-entry::before {
-  content: '';
-  position: absolute; left: -3rem;
-  top: 0.4rem;
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 0 4px rgba(184,137,42,0.15);
-  transform: translateX(-4px);
-}
-
 .tl-year {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 300;
-  color: var(--gold-light);
-  line-height: 1;
-  padding-top: 0.1rem;
+  font-family: var(--serif); font-weight: 300;
+  font-size: 2.4rem; line-height: 1; color: var(--blue);
+  font-variant-numeric: lining-nums;
 }
-
-.tl-content {}
-.tl-phase {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--rust);
-  margin-bottom: 0.3rem;
-}
-.tl-heading {
-  font-family: var(--font-display);
-  font-size: 1.55rem;
-  font-weight: 400;
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
-.tl-body {
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 58ch;
-  margin-bottom: 1rem;
-}
-.tl-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.tl-tag {
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  padding: 0.22rem 0.6rem;
-  background: rgba(184,137,42,0.08);
-  color: var(--gold);
-  border-radius: 3px;
-  text-transform: uppercase;
-}
+.tl-phase { font-size: 0.88rem; font-weight: 500; color: var(--text-2); margin-bottom: 0.3rem; }
+.tl-heading { font-family: var(--serif); font-weight: 450; font-size: 1.6rem; line-height: 1.2; margin-bottom: 0.7rem; max-width: 34ch; }
+.tl-body { color: var(--text-2); max-width: 64ch; margin-bottom: 1rem; }
+.tl-latest { background: var(--mist); border-radius: 12px; border-top-color: transparent; padding: 2.4rem 2rem; margin: 0 -2rem; }
+.tl-latest .tl-year { color: var(--ink); }
 
 /* ── IMPACT ── */
-#impact {
-  background: var(--slate);
-  color: var(--warm-white);
-}
-#impact .section-title { color: var(--warm-white); }
-
-.impact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 4rem;
-  background: rgba(184,137,42,0.15);
-}
-
+.impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .impact-card {
-  background: var(--slate);
-  padding: 3.5rem 3rem;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.3s;
+  background: var(--navy); border: 1px solid var(--line-dark);
+  border-radius: 14px; padding: 2.4rem 2.2rem;
 }
-.impact-card:hover { background: rgba(44,53,69,0.6); }
-
-.impact-card::before {
-  content: attr(data-letter);
-  position: absolute;
-  right: 2rem; top: 1.5rem;
-  font-family: var(--font-display);
-  font-size: 8rem;
-  font-style: italic;
-  font-weight: 300;
-  color: rgba(184,137,42,0.08);
-  line-height: 1;
-  pointer-events: none;
-}
-
-.impact-icon {
-  display: inline-flex;
-  width: 44px; height: 44px;
-  align-items: center; justify-content: center;
-  background: rgba(184,137,42,0.15);
-  border: 1px solid rgba(184,137,42,0.3);
-  border-radius: 8px;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--gold-light);
-  margin-bottom: 1.5rem;
-}
-.impact-card-title {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--warm-white);
-  margin-bottom: 1rem;
-}
-.impact-card-body {
-  font-size: 0.85rem;
-  color: rgba(250,248,244,0.5);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
+.impact-card h3 { font-family: var(--serif); font-weight: 450; font-size: 1.6rem; margin-bottom: 0.7rem; }
+.impact-card > p { font-size: 0.95rem; color: rgba(255,255,255,0.62); margin-bottom: 1.4rem; }
 .impact-items { list-style: none; }
 .impact-items li {
-  font-size: 0.82rem;
-  color: rgba(250,248,244,0.7);
-  padding: 0.6rem 0;
-  border-bottom: 1px solid rgba(184,137,42,0.1);
-  padding-left: 1rem;
-  position: relative;
-}
-.impact-items li::before {
-  content: '→';
-  position: absolute; left: 0;
-  color: var(--gold); font-size: 0.75rem;
+  font-size: 0.92rem; color: rgba(255,255,255,0.82);
+  padding: 0.7rem 0; border-top: 1px solid var(--line-dark);
 }
 
 /* ── WORKS ── */
-#works { background: var(--cream); }
-
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 4rem;
-}
-
+.works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .work-card {
-  background: var(--warm-white);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 2.5rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; padding: 2rem;
+  display: flex; flex-direction: column;
+  transition: border-color .2s;
 }
-.work-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(14,13,11,0.08);
-}
-.work-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--rust));
-  opacity: 0; transition: opacity 0.3s;
-}
-.work-card:hover::before { opacity: 1; }
-
-.work-tag {
-  font-size: 0.65rem; font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--rust);
-  margin-bottom: 1rem;
-}
-.work-title {
-  font-family: var(--font-display);
-  font-size: 1.25rem; font-weight: 400;
-  line-height: 1.25;
-  margin-bottom: 0.8rem;
-}
-.work-body {
-  font-size: 0.82rem; color: var(--muted);
-  line-height: 1.75; margin-bottom: 1.2rem;
-}
-.work-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.work-chip {
-  font-size: 0.65rem; padding: 0.2rem 0.55rem;
-  background: rgba(184,137,42,0.08);
-  color: var(--gold); border-radius: 3px;
-  font-weight: 500; letter-spacing: 0.06em;
-}
+.work-card:hover { border-color: var(--blue); }
+.work-tag { font-size: 0.85rem; color: var(--blue); font-weight: 500; margin-bottom: 0.6rem; }
+.work-title { font-family: var(--serif); font-weight: 450; font-size: 1.35rem; line-height: 1.22; margin-bottom: 0.7rem; }
+.work-body { font-size: 0.92rem; color: var(--text-2); margin-bottom: 1.2rem; flex: 1; }
 
 /* ── PUBLICATIONS ── */
-#publications { background: var(--warm-white); }
-
-.pub-list { margin-top: 4rem; }
+#publications { background: #fff; }
 .pub-item {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 2rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--border);
-  opacity: 0; transform: translateX(-16px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: grid; grid-template-columns: 5rem 1fr; gap: 2rem;
+  padding: 1.6rem 0; border-top: 1px solid var(--line);
 }
-.pub-item.visible { opacity: 1; transform: translateX(0); }
-.pub-year {
-  font-family: var(--font-display);
-  font-size: 1.6rem; font-weight: 300;
-  color: var(--gold); line-height: 1.3;
-}
-.pub-venue {
-  font-size: 0.65rem; font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
-}
-.pub-badge {
-  padding: 0.15rem 0.5rem;
-  background: var(--rust);
-  color: white; border-radius: 3px;
-  font-size: 0.6rem;
-}
-.pub-badge.scopus { background: var(--sage); }
-.pub-badge.ieee { background: var(--slate); }
-.pub-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem; font-weight: 400;
-  line-height: 1.4; margin-top: 0.4rem; margin-bottom: 0.4rem;
-}
-.pub-org { font-size: 0.78rem; color: var(--muted); }
+.pub-year { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; color: var(--blue); line-height: 1.2; }
+.pub-venue { font-size: 0.88rem; color: var(--text-2); display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.pub-badge { font-size: 0.72rem; font-weight: 600; padding: 0.12rem 0.5rem; border-radius: 4px; background: var(--mist); color: var(--navy-2); }
+.pub-badge.ieee { background: var(--navy); color: #fff; }
+.pub-badge.scopus { background: rgba(47,111,208,0.12); color: var(--blue); }
+.pub-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; line-height: 1.35; margin-top: 0.35rem; }
+.pub-doi { font-size: 0.82rem; color: var(--text-2); margin-top: 0.25rem; }
 
 /* ── PATENTS ── */
-#patents { background: var(--cream); }
-
-.patents-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  margin-top: 4rem;
-}
-
-.patent-card {
-  background: var(--warm-white);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 2rem 2.2rem;
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-  transition: border-color 0.25s;
-}
-.patent-card:hover { border-color: var(--gold); }
-
-.patent-status-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  margin-top: 0.35rem; flex-shrink: 0;
-}
-.granted { background: #1a9e6e; }
-.published { background: var(--gold); }
-
-.patent-num {
-  font-family: var(--font-body);
-  font-size: 0.68rem; font-weight: 500;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 0.35rem;
-}
-.patent-title {
-  font-family: var(--font-display);
-  font-size: 1.05rem; font-weight: 400;
-  line-height: 1.3; margin-bottom: 0.4rem;
-}
-.patent-meta { font-size: 0.75rem; color: var(--muted); }
-.patent-status-label {
-  display: inline-block;
-  font-size: 0.62rem; font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 0.18rem 0.5rem;
-  border-radius: 3px;
-  margin-bottom: 0.5rem;
-}
-.granted-label { background: rgba(26,158,110,0.1); color: #1a9e6e; }
-.published-label { background: rgba(91,155,213,0.1); color: var(--gold); }
+.patent-summary { display: flex; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.patent-summary div { font-size: 0.95rem; color: var(--text-2); }
+.patent-summary strong { font-family: var(--serif); font-weight: 400; font-size: 2.2rem; color: var(--ink); margin-right: 0.4rem; }
+.patents-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.patent-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem 1.7rem; }
+.patent-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
+.patent-num { font-size: 0.82rem; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.status { font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 4px; }
+.status.granted { background: #e2f4ec; color: #137a54; }
+.status.published { background: var(--mist); color: var(--blue); }
+.patent-title { font-family: var(--serif); font-size: 1.2rem; line-height: 1.3; margin-bottom: 0.3rem; }
+.patent-meta { font-size: 0.85rem; color: var(--text-2); }
 
 /* ── RECOGNITION ── */
-#recognition { background: var(--slate); color: var(--warm-white); }
-#recognition .section-title { color: var(--warm-white); }
-
-.recognition-top {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 4rem 0;
-}
-.rec-big-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(184,137,42,0.2);
-  border-radius: 8px;
-  padding: 2.5rem;
-  text-align: center;
-}
-.rec-big-num {
-  font-family: var(--font-display);
-  font-size: 3.5rem; font-weight: 300;
-  color: var(--gold-light); display: block; line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.rec-big-label {
-  font-size: 0.78rem; color: rgba(250,248,244,0.5);
-  letter-spacing: 0.08em;
-}
-
-.certs-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-.cert-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(184,137,42,0.12);
-  border-radius: 6px;
-  padding: 1.4rem 1.5rem;
-}
-.cert-org {
-  font-size: 0.62rem; font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 0.4rem;
-}
-.cert-name {
-  font-size: 0.85rem; color: rgba(250,248,244,0.8); line-height: 1.4;
-}
+.rec-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+.rec-big { background: var(--navy); border: 1px solid var(--line-dark); border-radius: 14px; padding: 2.2rem; }
+.rec-big .num { display: block; font-family: var(--serif); font-weight: 300; font-size: 3.2rem; line-height: 1; color: var(--sky); margin-bottom: 0.7rem; }
+.rec-big p { font-size: 0.92rem; color: rgba(255,255,255,0.68); }
+.certs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
+.cert { border: 1px solid var(--line-dark); border-radius: 10px; padding: 1.1rem 1.25rem; }
+.cert .org { font-size: 0.8rem; color: var(--sky); font-weight: 500; margin-bottom: 0.2rem; }
+.cert .name { font-size: 0.95rem; color: rgba(255,255,255,0.88); line-height: 1.4; }
+.cert.new { background: rgba(47,111,208,0.16); border-color: rgba(156,194,245,0.35); }
 
 /* ── FOOTER ── */
-footer {
-  background: var(--ink);
-  padding: 4rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-footer::before {
-  content: 'ANGAYARKANNI';
-  position: absolute;
-  top: 50%; left: 50%; transform: translate(-50%, -50%);
-  font-family: var(--font-display);
-  font-size: 12rem; font-weight: 300;
-  color: rgba(255,255,255,0.022);
-  white-space: nowrap;
-  pointer-events: none; letter-spacing: 0.05em;
-}
-.footer-name {
-  font-family: var(--font-display);
-  font-size: 1.5rem; font-weight: 300;
-  color: var(--warm-white); margin-bottom: 0.5rem;
-  position: relative;
-}
-.footer-role {
-  font-size: 0.8rem; color: rgba(250,248,244,0.4);
-  letter-spacing: 0.08em; margin-bottom: 2rem;
-  position: relative;
-}
-.footer-links {
-  display: flex; gap: 1.5rem; justify-content: center;
-  flex-wrap: wrap; list-style: none;
-  margin-bottom: 2rem; position: relative;
-}
-.footer-links a {
-  font-size: 0.75rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: rgba(250,248,244,0.4);
-  text-decoration: none; transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--gold); }
-.footer-copy {
-  font-size: 0.7rem; color: rgba(250,248,244,0.2);
-  position: relative;
-}
-.footer-divider {
-  width: 40px; height: 1px;
-  background: var(--gold); opacity: 0.3;
-  margin: 0 auto 2rem;
-}
+footer { background: #07101f; color: #fff; padding: 4.5rem 0 calc(3rem + env(safe-area-inset-bottom, 0px)); }
+.footer-grid { display: flex; justify-content: space-between; align-items: end; gap: 2rem; flex-wrap: wrap; }
+.footer-name { font-family: var(--serif); font-weight: 350; font-size: 2rem; line-height: 1.1; margin-bottom: 0.5rem; }
+.footer-role { font-size: 0.92rem; color: rgba(255,255,255,0.55); }
+.footer-links { display: flex; gap: 1.4rem; flex-wrap: wrap; list-style: none; }
+.footer-links a { font-size: 0.92rem; color: rgba(255,255,255,0.65); text-decoration: none; }
+.footer-links a:hover { color: #fff; }
+.footer-copy { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line-dark); font-size: 0.82rem; color: rgba(255,255,255,0.4); }
 
-/* ── SCROLL ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
 }
-
-.hero-left > * { animation: fadeUp 0.9s ease both; }
-.hero-left .hero-eyebrow { animation-delay: 0.1s; }
-.hero-left .hero-name { animation-delay: 0.2s; }
-.hero-left .hero-title { animation-delay: 0.3s; }
-.hero-left .hero-stats { animation-delay: 0.45s; }
-.hero-right > * { animation: fadeUp 0.9s ease both; }
-.hero-right .hero-tagline { animation-delay: 0.35s; }
-.hero-right .hero-desc { animation-delay: 0.45s; }
-.hero-right .badge-row { animation-delay: 0.55s; }
-.hero-right .social-links { animation-delay: 0.65s; }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
+@media (max-width: 1000px) {
   .nav-links { display: none; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 8rem 2rem 3rem; }
-  .hero-right { padding: 3rem 2rem 5rem; }
-  .container { padding: 0 1.5rem; }
-  section { padding: 5rem 0; }
-  .impact-grid, .works-grid, .recognition-top, .certs-grid { grid-template-columns: 1fr; }
-  .patents-grid { grid-template-columns: 1fr; }
-  .tl-entry { grid-template-columns: 1fr; gap: 0.5rem; }
-  footer { padding: 3rem 1.5rem; }
+  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-text { padding-bottom: 0; }
+  .portrait-wrap { max-width: 380px; margin: 0 auto; width: 100%; }
+  .portrait-card { left: 50%; transform: translateX(-50%); bottom: 1.5rem; width: max-content; max-width: 90%; }
+  .acc-feature { grid-template-columns: 1fr; }
+  .acc-grid, .impact-grid, .works-grid, .rec-top { grid-template-columns: 1fr 1fr; }
+  .certs-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  .container, .nav-inner { padding-left: 1.4rem; padding-right: 1.4rem; }
+  .hero { padding-top: 7rem; }
+  .hero-stats { grid-template-columns: repeat(2, auto); gap: 1.5rem 2.5rem; }
+  section { padding: 4.5rem 0; }
+  .acc-main, .acc-side { padding: 2rem 1.6rem; }
+  .acc-grid, .impact-grid, .works-grid, .rec-top, .certs-grid, .patents-grid { grid-template-columns: 1fr; }
+  .tl-entry { grid-template-columns: 1fr; gap: 0.6rem; }
+  .tl-latest { margin: 0 -1rem; padding: 2rem 1rem; }
+  .pub-item { grid-template-columns: 1fr; gap: 0.3rem; }
+  .cred-strip ul { justify-content: flex-start; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#" class="nav-brand">Dr. Angayarkanni</a>
-  <ul class="nav-links">
-    <li><a href="#timeline">Timeline</a></li>
-    <li><a href="#impact">Impact</a></li>
-    <li><a href="#works">Works</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#patents">Patents</a></li>
-    <li><a href="#recognition">Recognition</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Dr. Angayarkanni</a>
+    <ul class="nav-links">
+      <li><a href="#accolades">Accolades</a></li>
+      <li><a href="#timeline">Journey</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#patents">Patents</a></li>
+      <li><a href="#recognition">Recognition</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Higher Education AI Fellows — Candidate Portfolio</div>
-    <h1 class="hero-name">Dr. S. Pitchumani<br><em>Angayarkanni</em></h1>
-    <p class="hero-title">Professor · Computer Science & Engineering · AVIT, VMRF · Tamil Nadu, India</p>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-num">22</span>
-        <span class="stat-label">Years Teaching</span>
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="fellow-tag"><span class="dot">G</span>Google Higher Education Faculty AI Fellow, EMEA 2026</div>
+      <h1 class="hero-name"><span class="first">Dr. S. Pitchumani</span>Angayarkanni</h1>
+      <p class="hero-tamil" lang="ta">முனைவர் பிச்சுமணி அங்கயற்கண்ணி</p>
+      <p class="hero-role"><strong>Professor of Computer Science &amp; Engineering</strong> at AVIT, Vinayaka Mission’s Research Foundation, Chennai. Turning classrooms into laboratories and institutions into innovation hubs with AI — across healthcare, cybersecurity and education.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="mailto:pitchumca@gmail.com">Get in touch</a>
+        <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=cErrEyIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/dr-pitchumani-angayarkanni-s-89aa47168/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <div class="stat-item">
-        <span class="stat-num">$50K</span>
-        <span class="stat-label">Grant Awarded</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">40+</span>
-        <span class="stat-label">Publications</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">7</span>
-        <span class="stat-label">Patents</span>
+      <div class="hero-stats">
+        <div><span class="stat-num">22+</span><span class="stat-label">Years teaching</span></div>
+        <div><span class="stat-num">40+</span><span class="stat-label">Publications</span></div>
+        <div><span class="stat-num">7</span><span class="stat-label">Patents, UK &amp; India</span></div>
+        <div><span class="stat-num">$50K</span><span class="stat-label">International grant</span></div>
       </div>
     </div>
-  </div>
 
-  <div class="hero-right">
-    <p class="hero-tagline">History of <em>Transformation</em> — turning classrooms into <strong>laboratories</strong>, institutions into <strong>innovation hubs.</strong></p>
-    <p class="hero-desc">22 years of turning classrooms into laboratories and students into future-ready AI practitioners — across healthcare, cybersecurity, and beyond. Ph.D. · SET Qualified · IIT Ropar Fellow · Wayne State Researcher · Singapore AI Summit Speaker.</p>
-    <div class="badge-row">
-      <span class="badge">Ph.D. Computer Applications</span>
-      <span class="badge">IIT Ropar Fellow</span>
-      <span class="badge">Wayne State University</span>
-      <span class="badge">Singapore Keynote</span>
-      <span class="badge">NAAC Criteria 3 Lead</span>
-    </div>
-    <div class="social-links">
-      <a href="https://scholar.google.com/citations?user=cErrEyIAAAAJ&hl=en" class="social-link" target="_blank"><span>GS</span> Scholar</a>
-      <a href="https://orcid.org/0000-0001-9621-190X" class="social-link" target="_blank"><span>ORC</span> ORCID</a>
-      <a href="https://github.com/angayarkannipitchumani" class="social-link" target="_blank"><span>GH</span> GitHub</a>
-      <a href="https://www.linkedin.com/in/dr-pitchumani-angayarkanni-s-89aa47168/" class="social-link" target="_blank"><span>LI</span> LinkedIn</a>
-      <a href="https://medium.com/@angayarkanni.s" class="social-link" target="_blank"><span>M</span> Medium</a>
+    <div class="portrait-wrap">
+      <div class="portrait">
+        <!-- Put your photo next to this file as profile.jpg (portrait, at least 800×1000 px) -->
+        <img src="profile.jpg" alt="Portrait of Dr. S. Pitchumani Angayarkanni" onerror="this.parentElement.classList.add('no-photo')">
+        <div class="monogram" aria-hidden="true">SPA</div>
+      </div>
+      <div class="portrait-card">
+        <div class="pc-kicker">Inaugural cohort · 2026</div>
+        <div class="pc-title">IEEE Senior Member &amp; RAGN Global Ambassador for India</div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- TIMELINE -->
-<section id="timeline">
+<div class="cred-strip">
+  <ul class="container">
+    <li><strong>Ph.D.</strong> Karunya University</li>
+    <li><strong>Research Associate</strong> Wayne State University, USA</li>
+    <li><strong>Fellow</strong> IIT Ropar</li>
+    <li><strong>Keynote</strong> AI &amp; ML Summit, Singapore</li>
+    <li><strong>Lead</strong> NAAC Criterion 3</li>
+  </ul>
+</div>
+
+<!-- ACCOLADES -->
+<section id="accolades">
   <div class="container">
-    <div class="section-label">01 — The Journey</div>
-    <h2 class="section-title">History of <em>Transformation</em></h2>
-    <p class="timeline-intro">From teaching foundational computing to pioneering AI-driven research — a 22-year arc of deliberate, institution-shaping transformation.</p>
+    <p class="kicker">Latest accolades</p>
+    <h2 class="section-title">Recognised in 2026</h2>
+    <p class="section-intro">A year of global recognition — from Google’s first Higher Education Faculty AI Fellowship cohort to IEEE Senior Membership and an international ambassadorship.</p>
 
-    <div class="timeline-wrap">
-
-      <div class="tl-entry">
-        <div class="tl-year">2002</div>
-        <div class="tl-content">
-          <div class="tl-phase">Foundation</div>
-          <div class="tl-heading">Beginning at Lady Doak College, Madurai</div>
-          <div class="tl-body">Joined as faculty in Computer Science, teaching foundational courses and co-ordinating the Centre for Information Technology — building the campus management system from the ground up. Began integrating interdisciplinary perspectives long before it was mainstream.</div>
-          <div class="tl-tags"><span class="tl-tag">19-year tenure</span><span class="tl-tag">NAAC & IQAC member</span><span class="tl-tag">ISO Internal Auditor</span><span class="tl-tag">Curriculum Design</span></div>
+    <div class="acc-feature">
+      <div class="acc-main">
+        <p class="meta">Google for Education · EMEA 2026 · Inaugural cohort</p>
+        <h3>Google Higher Education Faculty AI Fellow</h3>
+        <p>Selected to the first-ever cohort of Google’s Higher Education Faculty AI Fellowship, recognising faculty who are reshaping teaching and learning with AI. Representing AVIT, VMRF in the Pedagogy &amp; Academia track at the Fellowship’s In-Person Institute in London.</p>
+        <div class="chips"><span class="chip">Inaugural cohort</span><span class="chip">Pedagogy &amp; Academia track</span><span class="chip">London Institute 2026</span></div>
+      </div>
+      <div class="acc-side">
+        <div>
+          <span class="status">Live</span>
+          <h4>AVIT EduMentor AI</h4>
+          <p>An adaptive Socratic co-teaching agent built as a Gemini Gem, grounded in the AVIT B.E. CSE (AIML) R2025 curriculum.</p>
+        </div>
+        <div>
+          <span class="status">Fellowship project · in progress</span>
+          <h4>“Beyond Knowledge”</h4>
+          <p>Gemini Gems for cognitive, psychomotor and affective learning — piloted in AVIT CSE, then shared across VMRF institutions.</p>
         </div>
       </div>
+    </div>
 
-      <div class="tl-entry">
-        <div class="tl-year">2009</div>
-        <div class="tl-content">
-          <div class="tl-phase">Research Ignition</div>
-          <div class="tl-heading">Ph.D. & First Best Paper Awards — AI in Medical Imaging</div>
-          <div class="tl-body">Enrolled in Ph.D. at Karunya University focused on automatic cancer detection in mammograms. Won Best Paper Award at ICAC-09 and again in 2010. Published first Scopus-indexed research. Presented at 6th Pan-Asian Service-Learning Conference in Hong Kong.</div>
-          <div class="tl-tags"><span class="tl-tag">Scopus Indexed</span><span class="tl-tag">Best Paper ×2</span><span class="tl-tag">Hong Kong</span></div>
-        </div>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">2012</div>
-        <div class="tl-content">
-          <div class="tl-phase">Global Reach</div>
-          <div class="tl-heading">Research Presented at IET London & ICGST Dubai</div>
-          <div class="tl-body">Took early Indian AI research to international audiences — presenting mammogram classification at IET Conference, University of Westminster, London, and at ICGST in Dubai. This opened a sustained channel of international scholarly engagement.</div>
-          <div class="tl-tags"><span class="tl-tag">London · Dubai</span><span class="tl-tag">IET Conference</span><span class="tl-tag">Deep Learning for Imaging</span></div>
-        </div>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">2017</div>
-        <div class="tl-content">
-          <div class="tl-phase">Doctoral Milestone</div>
-          <div class="tl-heading">Ph.D. Awarded — Novel Cancer Detection Framework</div>
-          <div class="tl-body">Completed doctoral research on automatic detection of cancerous masses in mammograms, contributing both a novel segmentation approach and a classification pipeline. Simultaneously authored an in-service training handbook for secondary-grade teachers.</div>
-          <div class="tl-tags"><span class="tl-tag">Ph.D. — Karunya University</span><span class="tl-tag">Published Handbook</span></div>
-        </div>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">2019</div>
-        <div class="tl-content">
-          <div class="tl-phase">Policy & Industry</div>
-          <div class="tl-heading">Singapore AI & ML Summit Keynote · IIT Ropar Research Internship</div>
-          <div class="tl-body">Invited as speaker at the RPA, AI & ML Summit in Singapore — placing Indian academic research on a global industry stage. Completed a Summer Research Internship at IIT Ropar under Dr. Sudarshan Iyengar. Won 3rd Place Best Paper at Christ University, Bangalore.</div>
-          <div class="tl-tags"><span class="tl-tag">Singapore Keynote</span><span class="tl-tag">IIT Ropar</span><span class="tl-tag">Best Paper Award</span></div>
-        </div>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">2020</div>
-        <div class="tl-content">
-          <div class="tl-phase">International Research</div>
-          <div class="tl-heading">Wayne State University (USA) — ML App for Science Education</div>
-          <div class="tl-body">Appointed Research Associate at Wayne State University (Detroit), developing the Students' Ideas App (SIA) — a machine-learning application for conceptual change in science education. Deployed on Google Play Store; gained significant traction during COVID-19 for distance learning.</div>
-          <div class="tl-tags"><span class="tl-tag">Wayne State · USA</span><span class="tl-tag">Play Store Deployed</span><span class="tl-tag">COVID-era Impact</span></div>
-        </div>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">2023</div>
-        <div class="tl-content">
-          <div class="tl-phase">$50,000 International Grant</div>
-          <div class="tl-heading">VIT Bangalore — Deep Funding AI Grant with SUNY POLY, USA</div>
-          <div class="tl-body">Secured Co-Investigator role on "Intelligent Ocular Image Processing for the AI Marketplace" in collaboration with SUNY Polytechnic Institute and Photrek — awarded $50,000 in the 4th round of Deep Funding. Built a Data Science & AI/ML curriculum that increased student enrollment by 20% over two years.</div>
-          <div class="tl-tags"><span class="tl-tag">$50,000 Deep Fund Grant</span><span class="tl-tag">SUNY POLY</span><span class="tl-tag">+20% Enrollment</span><span class="tl-tag">50+ Students</span></div>
-        </div>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">2025</div>
-        <div class="tl-content">
-          <div class="tl-phase">Current Chapter</div>
-          <div class="tl-heading">Professor at AVIT — Patents, FDPs & Institutional AI Leadership</div>
-          <div class="tl-body">Rejoined Indian academia at AVIT (VMRF) as Professor, embedding AI across curriculum, research, and institutional processes. Filed and received 2 granted patents (UK + India). Designed ATAL FDP proposals on Generative AI & Human-Centered AI. Delivered "From Prompt to Power" AI workshop for Atria Power Corporation.</div>
-          <div class="tl-tags"><span class="tl-tag">2 Patents Granted</span><span class="tl-tag">5 Patents Published</span><span class="tl-tag">ATAL FDP Proposals</span><span class="tl-tag">NAAC Criteria 3 Lead</span></div>
-        </div>
-      </div>
-
+    <div class="acc-grid">
+      <div class="acc-card"><p class="org">IEEE</p><h4>Senior Member</h4><p>A grade held by professionals with significant, sustained contributions to the field.</p></div>
+      <div class="acc-card"><p class="org">RAGN</p><h4>Global Ambassador for India</h4><p>Representing India in RAGN’s global network, advancing international research collaboration.</p></div>
+      <div class="acc-card"><p class="org">World Research Union</p><h4>Member</h4><p>Part of an international community of researchers working across disciplines and borders.</p></div>
+      <div class="acc-card"><p class="org">UGC–Malaviya Mission · IIT Ropar</p><h4>Resource Person, CBPAI Advanced</h4><p>Faculty sessions on AI teaching agents, Claude Code, publishing AI-designed courses and NEP 2020 alignment (Oct 2026).</p></div>
+      <div class="acc-card"><p class="org">IIT Ropar &amp; Times Professional Learning</p><h4>Runner-Up, ML Hackathon</h4><p>PGC AIDL Batch 2 Machine Learning Hackathon, October 2021.</p></div>
+      <div class="acc-card"><p class="org">TechGig</p><h4>Runner-Up, Data Science Hackathon</h4><p>Recognised for an applied data science solution in a national competitive hackathon.</p></div>
     </div>
   </div>
 </section>
 
-<!-- IMPACT -->
-<section id="impact">
+<!-- TIMELINE -->
+<section id="timeline">
   <div class="container">
-    <div class="section-label">02 — Dimensions of Impact</div>
-    <h2 class="section-title" style="color:var(--warm-white);">AI Across <em>Teaching,<br>Research & Administration</em></h2>
+    <p class="kicker">The journey</p>
+    <h2 class="section-title">Two decades of transformation</h2>
+    <p class="section-intro">From teaching foundational computing to pioneering AI-driven research — a 22-year arc of deliberate, institution-shaping change.</p>
+
+    <ol class="timeline">
+      <li class="tl-entry tl-latest">
+        <div class="tl-year">2026</div>
+        <div>
+          <p class="tl-phase">Current chapter · Global recognition</p>
+          <h3 class="tl-heading">Google HE Faculty AI Fellow, IEEE Senior Member, RAGN Global Ambassador</h3>
+          <p class="tl-body">Selected to the inaugural EMEA cohort of Google’s Higher Education Faculty AI Fellowship, representing AVIT at the London In-Person Institute and launching AVIT EduMentor AI — a Gemini-based Socratic co-teacher for CSE students. Elevated to IEEE Senior Member, appointed RAGN Global Ambassador for India, and serving as resource person for the UGC–Malaviya Mission CBPAI Advanced programme with IIT Ropar.</p>
+          <div class="chips"><span class="chip">Google AI Fellow</span><span class="chip">IEEE Senior Member</span><span class="chip">RAGN Ambassador</span><span class="chip">World Research Union</span><span class="chip">CBPAI · IIT Ropar</span></div>
+        </div>
+      </li>
+      <li class="tl-entry">
+        <div class="tl-year">2025</div>
+        <div>
+          <p class="tl-phase">Professor at AVIT</p>
+          <h3 class="tl-heading">Patents, FDPs and institutional AI leadership</h3>
+          <p class="tl-body">Joined AVIT (VMRF) as Professor, embedding AI across curriculum, research and institutional processes. Received 2 granted patents (UK and India) with 5 more published. Designed ATAL FDP proposals on Generative AI and Human-Centered AI, and delivered the “From Prompt to Power” AI workshop for Atria Power Corporation.</p>
+          <div class="chips"><span class="chip">2 patents granted</span><span class="chip">5 patents published</span><span class="chip">ATAL FDP proposals</span><span class="chip">NAAC Criterion 3 lead</span></div>
+        </div>
+      </li>
+      <li class="tl-entry">
+        <div class="tl-year">2023</div>
+        <div>
+          <p class="tl-phase">$50,000 international grant</p>
+          <h3 class="tl-heading">VIT Bangalore — Deep Funding AI grant with SUNY Poly, USA</h3>
+          <p class="tl-body">Co-Investigator on “Intelligent Ocular Image Processing for the AI Marketplace” with SUNY Polytechnic Institute and Photrek — awarded $50,000 in the 4th round of Deep Funding. Built a Data Science and AI/ML curriculum that increased enrolment by 20% over two years.</p>
+          <div class="chips"><span class="chip">$50,000 grant</span><span class="chip">SUNY Poly</span><span class="chip">+20% enrolment</span></div>
+        </div>
+      </li>
+      <li class="tl-entry">
+        <div class="tl-year">2021</div>
+        <div>
+          <p class="tl-phase">Applied AI competitions</p>
+          <h3 class="tl-heading">Runner-up, ML Hackathon — IIT Ropar &amp; Times Professional Learning</h3>
+          <p class="tl-body">Runner-up in the Machine Learning Hackathon of the IIT Ropar PGC AIDL programme (Batch 2), alongside a runner-up finish in TechGig’s Data Science Hackathon — keeping hands-on ML practice at the core of her teaching.</p>
+          <div class="chips"><span class="chip">IIT Ropar</span><span class="chip">TechGig</span><span class="chip">Runner-up ×2</span></div>
+        </div>
+      </li>
+      <li class="tl-entry">
+        <div class="tl-year">2020</div>
+        <div>
+          <p class="tl-phase">International research</p>
+          <h3 class="tl-heading">Wayne State University, USA — ML app for science education</h3>
+          <p class="tl-body">Research Associate at Wayne State University, Detroit, developing the Students’ Ideas App (SIA) — a machine-learning application for conceptual change in science education. Deployed on Google Play and widely used for distance learning during COVID-19.</p>
+          <div class="chips"><span class="chip">Wayne State</span><span class="chip">Google Play</span><span class="chip">COVID-era impact</span></div>
+        </div>
+      </li>
+      <li class="tl-entry">
+        <div class="tl-year">2019</div>
+        <div>
+          <p class="tl-phase">Policy &amp; industry</p>
+          <h3 class="tl-heading">Singapore AI &amp; ML Summit keynote, IIT Ropar research internship</h3>
+          <p class="tl-body">Invited speaker at the RPA, AI &amp; ML Summit in Singapore. Completed a Summer Research Internship at IIT Ropar under Dr. Sudarshan Iyengar, and won 3rd-place Best Paper at Christ University, Bangalore.</p>
+          <div class="chips"><span class="chip">Singapore keynote</span><span class="chip">IIT Ropar</span><span class="chip">Best Paper</span></div>
+        </div>
+      </li>
+      <li class="tl-entry">
+        <div class="tl-year">2017</div>
+        <div>
+          <p class="tl-phase">Doctoral milestone</p>
+          <h3 class="tl-heading">Ph.D. awarded — a novel cancer detection framework</h3>
+          <p class="tl-body">Doctoral research on automatic detection of cancerous masses in mammograms, contributing a novel segmentation approach and a classification pipeline. Also authored an in-service training handbook for secondary-grade teachers.</p>
+          <div class="chips"><span class="chip">Karunya University</span><span class="chip">Published handbook</span></div>
+        </div>
+      </li>
+      <li class="tl-entry">
+        <div class="tl-year">2012</div>
+        <div>
+          <p class="tl-phase">Global reach</p>
+          <h3 class="tl-heading">Research presented at IET London and ICGST Dubai</h3>
+          <p class="tl-body">Presented mammogram classification research at the IET Conference, University of Westminster, London, and at ICGST in Dubai — opening a sustained channel of international scholarly engagement.</p>
+          <div class="chips"><span class="chip">London</span><span class="chip">Dubai</span><span class="chip">Medical imaging</span></div>
+        </div>
+      </li>
+      <li class="tl-entry">
+        <div class="tl-year">2009</div>
+        <div>
+          <p class="tl-phase">Research ignition</p>
+          <h3 class="tl-heading">Ph.D. begins, first Best Paper awards in medical imaging AI</h3>
+          <p class="tl-body">Began a Ph.D. at Karunya University on automatic cancer detection in mammograms. Won Best Paper at ICAC-09 and again in 2010, published first Scopus-indexed research, and presented at the 6th Pan-Asian Service-Learning Conference in Hong Kong.</p>
+          <div class="chips"><span class="chip">Scopus indexed</span><span class="chip">Best Paper ×2</span><span class="chip">Hong Kong</span></div>
+        </div>
+      </li>
+      <li class="tl-entry">
+        <div class="tl-year">2002</div>
+        <div>
+          <p class="tl-phase">Foundation</p>
+          <h3 class="tl-heading">Lady Doak College, Madurai</h3>
+          <p class="tl-body">Joined as Computer Science faculty and coordinated the Centre for Information Technology, building the campus management system from the ground up — a 19-year tenure that included NAAC, IQAC and ISO internal audit roles.</p>
+          <div class="chips"><span class="chip">19-year tenure</span><span class="chip">NAAC &amp; IQAC</span><span class="chip">ISO Internal Auditor</span></div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact" class="dark">
+  <div class="container">
+    <p class="kicker">Dimensions of impact</p>
+    <h2 class="section-title">AI across teaching, research and administration</h2>
+    <p class="section-intro">Three connected strands of work, each feeding the others.</p>
     <div class="impact-grid">
-      <div class="impact-card" data-letter="T">
-        <div class="impact-icon">T</div>
-        <div class="impact-card-title">AI-Integrated Teaching</div>
-        <div class="impact-card-body">Designed and delivered graduate-level courses in Machine Learning, Deep Learning, Reinforcement Learning, and Data Science — consistently scoring 4.7/5 in student evaluations.</div>
+      <div class="impact-card">
+        <h3>AI-integrated teaching</h3>
+        <p>Graduate courses in Machine Learning, Deep Learning, Reinforcement Learning and Data Science, consistently rated 4.7/5 by students.</p>
         <ul class="impact-items">
-          <li>SIA App: ML-based conceptual change tool on Google Play Store (Wayne State, 2020)</li>
-          <li>ATAL FDP proposals: 12-day Advanced GenAI/LLM + 6-day Human-Centered AI</li>
-          <li>"From Prompt to Power" AI workshop for Atria Power Corporation executives (2026)</li>
-          <li>+20% student enrollment at VIT Bangalore following curriculum redesign</li>
-          <li>AI Productivity Workshop with 22-page manual and 35+ ready-to-use prompts</li>
+          <li>AVIT EduMentor AI: Gemini Gem Socratic co-teacher for CSE (AIML) students (2026)</li>
+          <li>SIA App: ML-based conceptual change tool on Google Play (Wayne State, 2020)</li>
+          <li>ATAL FDP proposals: 12-day Advanced GenAI/LLM and 6-day Human-Centered AI</li>
+          <li>“From Prompt to Power” AI workshop for Atria Power executives (2026)</li>
+          <li>+20% student enrolment at VIT Bangalore after curriculum redesign</li>
         </ul>
       </div>
-
-      <div class="impact-card" data-letter="R">
-        <div class="impact-icon">R</div>
-        <div class="impact-card-title">Pioneering AI Research</div>
-        <div class="impact-card-body">Led and published AI research spanning medical imaging, behavioral analytics, NLP, and edge computing — with international grants, multi-country collaborations, and Scopus Q1 publications.</div>
+      <div class="impact-card">
+        <h3>Pioneering AI research</h3>
+        <p>Medical imaging, behavioural analytics, NLP and edge computing — with international grants and Scopus Q1 publications.</p>
         <ul class="impact-items">
-          <li>$50,000 Deep Funding grant: Ocular image processing AI (SUNY POLY + Photrek, USA)</li>
-          <li>GenZAware: AI behavioral analytics platform with RL nudging for student wellbeing</li>
-          <li>Cancer histopathology AI (IndiaAI–NCG CATCH 2025) — national funded initiative</li>
-          <li>NAYAN.AI: MeitY proposal on AI + blockchain for national cybersecurity</li>
-          <li>ALS & Parkinson's prognosis models with STDGF spatio-temporal deep learning</li>
+          <li>$50,000 Deep Funding grant: ocular image processing AI (SUNY Poly and Photrek, USA)</li>
+          <li>GenZAware: AI behavioural analytics with RL nudging for student wellbeing</li>
+          <li>Cancer histopathology AI (IndiaAI–NCG CATCH 2025)</li>
+          <li>NAYAN.AI: MeitY proposal on AI and blockchain for national cybersecurity</li>
+          <li>ALS and Parkinson’s prognosis models with spatio-temporal deep learning</li>
         </ul>
       </div>
-
-      <div class="impact-card" data-letter="A">
-        <div class="impact-icon">A</div>
-        <div class="impact-card-title">Institutional AI Leadership</div>
-        <div class="impact-card-body">Moved beyond classroom and lab to reshape institutional processes — from accreditation documentation powered by AI to policies, FDP design, and technology infrastructure.</div>
+      <div class="impact-card">
+        <h3>Institutional AI leadership</h3>
+        <p>Reshaping institutional processes — AI-assisted accreditation, faculty development and technology infrastructure.</p>
         <ul class="impact-items">
-          <li>NAAC Criteria 3 Coordinator: evidence collection, OBE integration, AI-assisted reporting</li>
-          <li>ISO Internal Auditor at Lady Doak College — systematic quality processes for 19 years</li>
-          <li>Coordinator, Centre for Communication & Media: smart classrooms, e-content</li>
-          <li>National FDP organizer: "Next-Gen Cybersecurity with AI" — faculty capability building</li>
-          <li>Automation Committee convenor — embedded IT systems in institutional workflows</li>
+          <li>Resource person, UGC–Malaviya Mission CBPAI Advanced programme (IIT Ropar, 2026)</li>
+          <li>NAAC Criterion 3 Coordinator: evidence, OBE integration, AI-assisted reporting</li>
+          <li>ISO Internal Auditor at Lady Doak College for 19 years</li>
+          <li>National FDP organiser: “Next-Gen Cybersecurity with AI”</li>
+          <li>Automation Committee convenor — IT systems in institutional workflows</li>
         </ul>
       </div>
     </div>
@@ -931,52 +658,19 @@ footer::before {
 <!-- WORKS -->
 <section id="works">
   <div class="container">
-    <div class="section-label">03 — Works & Evidence</div>
-    <h2 class="section-title">Content That Has <em>Inspired,<br>Challenged & Guided</em></h2>
+    <p class="kicker">Works &amp; evidence</p>
+    <h2 class="section-title">Work that has inspired, challenged and guided</h2>
+    <p class="section-intro">Selected projects, programmes and publications.</p>
     <div class="works-grid">
-
-      <div class="work-card">
-        <div class="work-tag">Strategic Research Proposal</div>
-        <div class="work-title">Intelligent Ocular Image Processing for the AI Marketplace</div>
-        <div class="work-body">Deep Funding AI proposal (4th round) in collaboration with SUNY Polytechnic Institute and Photrek, USA. Awarded $50,000. Combines computer vision, foundation models, and medical AI for ophthalmic diagnostics.</div>
-        <div class="work-meta"><span class="work-chip">$50,000 Awarded</span><span class="work-chip">SUNY POLY · USA</span><span class="work-chip">2024</span></div>
-      </div>
-
-      <div class="work-card">
-        <div class="work-tag">AI Curriculum Framework</div>
-        <div class="work-title">ATAL FDP Proposals: GenAI/LLMs & Human-Centered AI</div>
-        <div class="work-body">Two full ATAL Academy FDP submissions for AY 2026–27 — Advanced 12-day GenAI/LLM programme and Basic 6-day Human-Centered AI, both with OBE-mapped outcomes and compliance declarations.</div>
-        <div class="work-meta"><span class="work-chip">ATAL Academy</span><span class="work-chip">2 Programmes</span><span class="work-chip">2026–27</span></div>
-      </div>
-
-      <div class="work-card">
-        <div class="work-tag">Peer-Reviewed Publication</div>
-        <div class="work-title">Hybrid CNN in Classification of Cancer in Histopathology Images</div>
-        <div class="work-body">Published in Journal of Digital Imaging (Scopus Q1). Presents a hybrid convolutional neural network for automated cancer classification from histopathology slides — an early contribution to AI-assisted pathology.</div>
-        <div class="work-meta"><span class="work-chip">Journal of Digital Imaging</span><span class="work-chip">Scopus Q1</span><span class="work-chip">2022</span></div>
-      </div>
-
-      <div class="work-card">
-        <div class="work-tag">Industry Workshop</div>
-        <div class="work-title">"From Prompt to Power" — AI Productivity Workshop</div>
-        <div class="work-body">Delivered for power utility executives at Atria Power, Bengaluru (March 2026). A 30-slide deck, 22-page participant manual with 35+ copy-paste-ready prompts tailored to PLF, SCADA, HSE, and CERC terminology.</div>
-        <div class="work-meta"><span class="work-chip">Industry Executives</span><span class="work-chip">Bengaluru</span><span class="work-chip">March 2026</span></div>
-      </div>
-
-      <div class="work-card">
-        <div class="work-tag">Digital / Public-Facing</div>
-        <div class="work-title">Students' Ideas App (SIA) — ML for Science Conceptual Change</div>
-        <div class="work-body">Built at Wayne State University. A Google Play Store app using the Common Knowledge Construction Model with machine learning to help students track conceptual evolution in science. Widely adopted during COVID-19.</div>
-        <div class="work-meta"><span class="work-chip">Wayne State · USA</span><span class="work-chip">Google Play Store</span><span class="work-chip">2020</span></div>
-      </div>
-
-      <div class="work-card">
-        <div class="work-tag">Conference Presentation</div>
-        <div class="work-title">Ambiguity-Aware Breast Histology Classification with Conformal Prediction</div>
-        <div class="work-body">Presented at ICIITH-2026 (Silver Jubilee, VMRF). Introduces a clinically motivated abstention policy using conformal prediction — ensuring AI systems communicate uncertainty honestly to clinicians.</div>
-        <div class="work-meta"><span class="work-chip">ICIITH 2026</span><span class="work-chip">VMRF Salem</span><span class="work-chip">January 2026</span></div>
-      </div>
-
+      <div class="work-card"><p class="work-tag">AI teaching agent</p><h3 class="work-title">AVIT EduMentor AI — adaptive co-teaching agent</h3><p class="work-body">A Gemini Gem that acts as a Socratic co-teacher for AVIT CSE students, grounded in the B.E. CSE (AIML) R2025 curriculum. Showcased in Google AI Fellowship work.</p><div class="chips"><span class="chip">Gemini Gems</span><span class="chip">2026</span></div></div>
+      <div class="work-card"><p class="work-tag">Fellowship project · in progress</p><h3 class="work-title">“Beyond Knowledge” — three-domain learning agents</h3><p class="work-body">Gemini Gems, NotebookLM and Antigravity applied to cognitive, psychomotor and affective learning — piloted in AVIT CSE and designed to scale across VMRF, with a case study planned for 2027.</p><div class="chips"><span class="chip">Google AI Fellowship</span><span class="chip">2026–27</span></div></div>
+      <div class="work-card"><p class="work-tag">National faculty development</p><h3 class="work-title">CBPAI Advanced — AI agents and course automation</h3><p class="work-body">Sessions for the UGC–Malaviya Mission MMTTP with IIT Ropar: AI teaching agents, Claude Code, publishing course homepages on GitHub Pages, and AI-assisted NEP 2020 course audits.</p><div class="chips"><span class="chip">IIT Ropar</span><span class="chip">October 2026</span></div></div>
+      <div class="work-card"><p class="work-tag">Funded research</p><h3 class="work-title">Intelligent Ocular Image Processing for the AI Marketplace</h3><p class="work-body">Deep Funding (4th round) with SUNY Polytechnic Institute and Photrek, USA. Computer vision, foundation models and medical AI for ophthalmic diagnostics.</p><div class="chips"><span class="chip">$50,000 awarded</span><span class="chip">2024</span></div></div>
+      <div class="work-card"><p class="work-tag">AI curriculum framework</p><h3 class="work-title">ATAL FDP proposals: GenAI/LLMs and Human-Centered AI</h3><p class="work-body">Two ATAL Academy submissions for AY 2026–27 — a 12-day Advanced GenAI/LLM programme and a 6-day Human-Centered AI programme, both with OBE-mapped outcomes.</p><div class="chips"><span class="chip">ATAL Academy</span><span class="chip">2026–27</span></div></div>
+      <div class="work-card"><p class="work-tag">Peer-reviewed publication</p><h3 class="work-title">Hybrid CNN for cancer classification in histopathology images</h3><p class="work-body">Journal of Digital Imaging (Scopus Q1). A hybrid convolutional neural network for automated cancer classification — an early contribution to AI-assisted pathology.</p><div class="chips"><span class="chip">Scopus Q1</span><span class="chip">2022</span></div></div>
+      <div class="work-card"><p class="work-tag">Industry workshop</p><h3 class="work-title">“From Prompt to Power” — AI productivity workshop</h3><p class="work-body">For power utility executives at Atria Power, Bengaluru: a 30-slide deck and a 22-page manual with 35+ prompts tailored to PLF, SCADA, HSE and CERC work.</p><div class="chips"><span class="chip">Bengaluru</span><span class="chip">March 2026</span></div></div>
+      <div class="work-card"><p class="work-tag">Public-facing app</p><h3 class="work-title">Students’ Ideas App (SIA) — ML for conceptual change in science</h3><p class="work-body">Built at Wayne State University using the Common Knowledge Construction Model to help students track how their science ideas evolve. Widely adopted during COVID-19.</p><div class="chips"><span class="chip">Google Play</span><span class="chip">2020</span></div></div>
+      <div class="work-card"><p class="work-tag">Conference presentation</p><h3 class="work-title">Ambiguity-aware breast histology classification with conformal prediction</h3><p class="work-body">ICIITH-2026 (VMRF Silver Jubilee). A clinically motivated abstention policy so AI systems communicate uncertainty honestly to clinicians.</p><div class="chips"><span class="chip">ICIITH 2026</span><span class="chip">January 2026</span></div></div>
     </div>
   </div>
 </section>
@@ -984,74 +678,18 @@ footer::before {
 <!-- PUBLICATIONS -->
 <section id="publications">
   <div class="container">
-    <div class="section-label">04 — Selected Publications</div>
-    <h2 class="section-title">Peer-Reviewed <em>Research Record</em></h2>
+    <p class="kicker">Selected publications</p>
+    <h2 class="section-title">Peer-reviewed research record</h2>
+    <p class="section-intro">A selection from 40+ publications. The full list is on <a href="https://scholar.google.com/citations?user=cErrEyIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0000-0001-9621-190X" target="_blank" rel="noopener">ORCID</a>.</p>
     <div class="pub-list">
-
-      <div class="pub-item">
-        <div class="pub-year">2026</div>
-        <div class="pub-info">
-          <div class="pub-venue"><span class="pub-badge">Conference</span> ICIITH-2026, VMRF Silver Jubilee — Salem, Tamil Nadu</div>
-          <div class="pub-title">Ambiguity-Aware Breast Histology Image Classification with Conformal Prediction Sets and a Clinically Motivated Abstention Policy</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2026</div>
-        <div class="pub-info">
-          <div class="pub-venue"><span class="pub-badge ieee">IEEE</span> 4th IEEE IITCEE 2026, BNMIT Bengaluru · IEEE Bangalore Section</div>
-          <div class="pub-title">Hybrid Deep Learning Model in Predicting Severity of Kidney Failure Using Histopathology Images</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2025</div>
-        <div class="pub-info">
-          <div class="pub-venue"><span class="pub-badge scopus">Scopus</span> ICCSCM 2025 — Scopus indexed</div>
-          <div class="pub-title">Enhancing Sepsis Prediction with Transformer-Based Feature Extraction, PCA, and TabNet</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2025</div>
-        <div class="pub-info">
-          <div class="pub-venue"><span class="pub-badge scopus">Scopus</span> 6th ICICNIS 2025</div>
-          <div class="pub-title">Q-ChainX: A Quantum-Infused Blockchain Paradigm for Next-Generation Ultra-Secure Data Infrastructures</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2024</div>
-        <div class="pub-info">
-          <div class="pub-venue"><span class="pub-badge ieee">IEEE</span> ICIPRoB 2024 — Colombo, Sri Lanka · IEEE</div>
-          <div class="pub-title">Deep Learning to Identify Parkinson's Disease Biomarkers in Age-related Macular Degeneration Fundus Images</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2022</div>
-        <div class="pub-info">
-          <div class="pub-venue"><span class="pub-badge scopus">Scopus Q1</span> Journal of Digital Imaging</div>
-          <div class="pub-title">Hybrid Convolution Neural Network in Classification of Cancer in Histopathology Images</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2020</div>
-        <div class="pub-info">
-          <div class="pub-venue"><span class="pub-badge">Research</span> College of Education, Wayne State University, Detroit, USA</div>
-          <div class="pub-title">Students' Ideas App (SIA): ML for 'What', 'Where', 'Why', 'How' of Science</div>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <div class="pub-year">2015</div>
-        <div class="pub-info">
-          <div class="pub-venue"><span class="pub-badge scopus">Scopus</span> SpringerPlus — Scopus indexed</div>
-          <div class="pub-title">Dynamic Graph Cut Based Segmentation of Mammogram</div>
-        </div>
-      </div>
-
+      <div class="pub-item"><div class="pub-year">2026</div><div><div class="pub-venue"><span class="pub-badge">Conference</span>ICIITH-2026, VMRF Silver Jubilee, Salem</div><h3 class="pub-title">Ambiguity-Aware Breast Histology Image Classification with Conformal Prediction Sets and a Clinically Motivated Abstention Policy</h3></div></div>
+      <div class="pub-item"><div class="pub-year">2026</div><div><div class="pub-venue"><span class="pub-badge ieee">IEEE</span>4th IEEE IITCEE 2026, BNMIT Bengaluru</div><h3 class="pub-title">Hybrid Deep Learning Model in Predicting Severity of Kidney Failure Using Histopathology Images</h3><p class="pub-doi">doi: 10.1109/IITCEE67948.2026.11394278</p></div></div>
+      <div class="pub-item"><div class="pub-year">2025</div><div><div class="pub-venue"><span class="pub-badge scopus">Scopus</span>ICCSCM 2025</div><h3 class="pub-title">Enhancing Sepsis Prediction with Transformer-Based Feature Extraction, PCA, and TabNet</h3></div></div>
+      <div class="pub-item"><div class="pub-year">2025</div><div><div class="pub-venue"><span class="pub-badge scopus">Scopus</span>6th ICICNIS 2025</div><h3 class="pub-title">Q-ChainX: A Quantum-Infused Blockchain Paradigm for Next-Generation Ultra-Secure Data Infrastructures</h3></div></div>
+      <div class="pub-item"><div class="pub-year">2024</div><div><div class="pub-venue"><span class="pub-badge ieee">IEEE</span>ICIPRoB 2024, Colombo, Sri Lanka</div><h3 class="pub-title">Deep Learning to Identify Parkinson’s Disease Biomarkers in Age-related Macular Degeneration Fundus Images</h3></div></div>
+      <div class="pub-item"><div class="pub-year">2022</div><div><div class="pub-venue"><span class="pub-badge scopus">Scopus Q1</span>Journal of Digital Imaging</div><h3 class="pub-title">Hybrid Convolution Neural Network in Classification of Cancer in Histopathology Images</h3></div></div>
+      <div class="pub-item"><div class="pub-year">2020</div><div><div class="pub-venue"><span class="pub-badge">Research</span>College of Education, Wayne State University, USA</div><h3 class="pub-title">Students’ Ideas App (SIA): ML for ‘What’, ‘Where’, ‘Why’, ‘How’ of Science</h3></div></div>
+      <div class="pub-item"><div class="pub-year">2015</div><div><div class="pub-venue"><span class="pub-badge scopus">Scopus</span>SpringerPlus</div><h3 class="pub-title">Dynamic Graph Cut Based Segmentation of Mammogram</h3></div></div>
     </div>
   </div>
 </section>
@@ -1059,156 +697,72 @@ footer::before {
 <!-- PATENTS -->
 <section id="patents">
   <div class="container">
-    <div class="section-label">05 — Intellectual Property</div>
-    <h2 class="section-title">Patents Granted <em>&amp; Published</em></h2>
-    <p style="color:var(--muted);font-size:0.9rem;margin-top:0.5rem;">7 patents across UK and India — spanning AI-driven surveillance, smart infrastructure, healthcare edge systems, and sustainable navigation.</p>
+    <p class="kicker">Intellectual property</p>
+    <h2 class="section-title">Patents granted and published</h2>
+    <p class="section-intro">AI-driven surveillance, smart infrastructure, healthcare edge systems and sustainable navigation.</p>
+    <div class="patent-summary">
+      <div><strong>2</strong>granted (UK, India)</div>
+      <div><strong>5</strong>published (India)</div>
+    </div>
     <div class="patents-grid">
-
-      <div class="patent-card">
-        <div class="patent-status-dot granted"></div>
-        <div>
-          <div class="patent-num">6476616 · UK</div>
-          <div class="patent-status-label granted-label">Granted</div>
-          <div class="patent-title">Door View Camera</div>
-          <div class="patent-meta">Filed 01/10/2025 · Granted 16/10/2025 · UK Prototype</div>
-        </div>
-      </div>
-
-      <div class="patent-card">
-        <div class="patent-status-dot granted"></div>
-        <div>
-          <div class="patent-num">462810-001 · India</div>
-          <div class="patent-status-label granted-label">Granted</div>
-          <div class="patent-title">Traffic Monitoring AI Camera</div>
-          <div class="patent-meta">Filed 19/06/2025 · Granted 22/09/2025 · India Prototype</div>
-        </div>
-      </div>
-
-      <div class="patent-card">
-        <div class="patent-status-dot published"></div>
-        <div>
-          <div class="patent-num">202541117493 · India</div>
-          <div class="patent-status-label published-label">Published</div>
-          <div class="patent-title">On-Device Multimodal Voice Assistant for Secure Retail Transactions</div>
-          <div class="patent-meta">VMRF (Deemed University) · CSE, AVIT</div>
-        </div>
-      </div>
-
-      <div class="patent-card">
-        <div class="patent-status-dot published"></div>
-        <div>
-          <div class="patent-num">202541117494 · India</div>
-          <div class="patent-status-label published-label">Published</div>
-          <div class="patent-title">IoT-Enabled Smart Bins with Vision-Based E-Waste Classification</div>
-          <div class="patent-meta">VMRF (Deemed University) · CSE, AVIT</div>
-        </div>
-      </div>
-
-      <div class="patent-card">
-        <div class="patent-status-dot published"></div>
-        <div>
-          <div class="patent-num">202541117498 · India</div>
-          <div class="patent-status-label published-label">Published</div>
-          <div class="patent-title">Carbon-Optimized Navigation Using IoT Sensing with Reinforcement Learning on Road Graphs</div>
-          <div class="patent-meta">VMRF (Deemed University) · CSE, AVIT</div>
-        </div>
-      </div>
-
-      <div class="patent-card">
-        <div class="patent-status-dot published"></div>
-        <div>
-          <div class="patent-num">202541128438 · India</div>
-          <div class="patent-status-label published-label">Published</div>
-          <div class="patent-title">Edge-Federated Multi-Risk Health Prediction System Using Decentralized AI</div>
-          <div class="patent-meta">VMRF (Deemed University) · CSE, AVIT</div>
-        </div>
-      </div>
-
-      <div class="patent-card">
-        <div class="patent-status-dot published"></div>
-        <div>
-          <div class="patent-num">202541128444 · India</div>
-          <div class="patent-status-label published-label">Published</div>
-          <div class="patent-title">Edge-AI System for Real-Time Histopathology Slide Interpretation</div>
-          <div class="patent-meta">VMRF (Deemed University) · CSE, AVIT</div>
-        </div>
-      </div>
-
+      <div class="patent-card"><div class="patent-top"><span class="patent-num">6476616 · UK</span><span class="status granted">Granted</span></div><h3 class="patent-title">Door View Camera</h3><p class="patent-meta">Filed 01/10/2025 · Granted 16/10/2025</p></div>
+      <div class="patent-card"><div class="patent-top"><span class="patent-num">462810-001 · India</span><span class="status granted">Granted</span></div><h3 class="patent-title">Traffic Monitoring AI Camera</h3><p class="patent-meta">Filed 19/06/2025 · Granted 22/09/2025</p></div>
+      <div class="patent-card"><div class="patent-top"><span class="patent-num">202541117493 · India</span><span class="status published">Published</span></div><h3 class="patent-title">On-Device Multimodal Voice Assistant for Secure Retail Transactions</h3><p class="patent-meta">VMRF · CSE, AVIT</p></div>
+      <div class="patent-card"><div class="patent-top"><span class="patent-num">202541117494 · India</span><span class="status published">Published</span></div><h3 class="patent-title">IoT-Enabled Smart Bins with Vision-Based E-Waste Classification</h3><p class="patent-meta">VMRF · CSE, AVIT</p></div>
+      <div class="patent-card"><div class="patent-top"><span class="patent-num">202541117498 · India</span><span class="status published">Published</span></div><h3 class="patent-title">Carbon-Optimized Navigation Using IoT Sensing with Reinforcement Learning on Road Graphs</h3><p class="patent-meta">VMRF · CSE, AVIT</p></div>
+      <div class="patent-card"><div class="patent-top"><span class="patent-num">202541128438 · India</span><span class="status published">Published</span></div><h3 class="patent-title">Edge-Federated Multi-Risk Health Prediction System Using Decentralized AI</h3><p class="patent-meta">VMRF · CSE, AVIT</p></div>
+      <div class="patent-card"><div class="patent-top"><span class="patent-num">202541128444 · India</span><span class="status published">Published</span></div><h3 class="patent-title">Edge-AI System for Real-Time Histopathology Slide Interpretation</h3><p class="patent-meta">VMRF · CSE, AVIT</p></div>
     </div>
   </div>
 </section>
 
 <!-- RECOGNITION -->
-<section id="recognition">
+<section id="recognition" class="dark">
   <div class="container">
-    <div class="section-label">06 — Recognition & Credentials</div>
-    <h2 class="section-title" style="color:var(--warm-white);">Awards, Grants <em>&amp; Certifications</em></h2>
-    <div class="recognition-top">
-      <div class="rec-big-card">
-        <span class="rec-big-num">$50K</span>
-        <div class="rec-big-label">Deep Funding AI Grant — Medical AI Research · SUNY POLY Collaboration · 4th Round (2024)</div>
-      </div>
-      <div class="rec-big-card">
-        <span class="rec-big-num">×4</span>
-        <div class="rec-big-label">Best Paper Awards — ICAC-09 · ICCCI'10 · Christ University 2019 · National Conference 2004</div>
-      </div>
-      <div class="rec-big-card">
-        <span class="rec-big-num">4.7/5</span>
-        <div class="rec-big-label">Teaching Evaluation Score — consistent across 100+ students/year in ML, AI & Data Science</div>
-      </div>
+    <p class="kicker">Recognition &amp; credentials</p>
+    <h2 class="section-title">Awards, grants and certifications</h2>
+    <p class="section-intro">Honours and professional credentials across two decades.</p>
+    <div class="rec-top">
+      <div class="rec-big"><span class="num">$50K</span><p>Deep Funding AI grant for medical AI research with SUNY Poly, 4th round (2024)</p></div>
+      <div class="rec-big"><span class="num">4</span><p>Best Paper awards — ICAC-09, ICCCI’10, Christ University 2019, National Conference 2004</p></div>
+      <div class="rec-big"><span class="num">4.7/5</span><p>Teaching evaluation across 100+ students a year in ML, AI and Data Science</p></div>
     </div>
     <div class="certs-grid">
-      <div class="cert-card"><div class="cert-org">Amazon</div><div class="cert-name">Architecting on AWS · 2018</div></div>
-      <div class="cert-card"><div class="cert-org">Amazon</div><div class="cert-name">AWS Cloud Practitioner · 2018</div></div>
-      <div class="cert-card"><div class="cert-org">NPTEL / HarvardX</div><div class="cert-name">Data Science using Python — Gold Topper (94%)</div></div>
-      <div class="cert-card"><div class="cert-org">Cisco</div><div class="cert-name">Cybersecurity Essentials</div></div>
-      <div class="cert-card"><div class="cert-org">MathWorks</div><div class="cert-name">Deep Learning Onramp</div></div>
-      <div class="cert-card"><div class="cert-org">Alison</div><div class="cert-name">Machine Learning with R Studio — Diploma</div></div>
-      <div class="cert-card"><div class="cert-org">Google Daydream</div><div class="cert-name">Augmented Reality & ARCore</div></div>
-      <div class="cert-card"><div class="cert-org">National Certification</div><div class="cert-name">Master Trainer · OOP C++ & Java</div></div>
+      <div class="cert new"><p class="org">Google for Education</p><p class="name">Higher Education Faculty AI Fellow, EMEA 2026</p></div>
+      <div class="cert new"><p class="org">IEEE</p><p class="name">Senior Member</p></div>
+      <div class="cert new"><p class="org">RAGN</p><p class="name">Global Ambassador for India</p></div>
+      <div class="cert new"><p class="org">World Research Union</p><p class="name">Member</p></div>
+      <div class="cert"><p class="org">Amazon</p><p class="name">Architecting on AWS, 2018</p></div>
+      <div class="cert"><p class="org">Amazon</p><p class="name">AWS Cloud Practitioner, 2018</p></div>
+      <div class="cert"><p class="org">NPTEL / HarvardX</p><p class="name">Data Science using Python — Gold Topper (94%)</p></div>
+      <div class="cert"><p class="org">Cisco</p><p class="name">Cybersecurity Essentials</p></div>
+      <div class="cert"><p class="org">MathWorks</p><p class="name">Deep Learning Onramp</p></div>
+      <div class="cert"><p class="org">Alison</p><p class="name">Machine Learning with R Studio — Diploma</p></div>
+      <div class="cert"><p class="org">Google Daydream</p><p class="name">Augmented Reality &amp; ARCore</p></div>
+      <div class="cert"><p class="org">National Certification</p><p class="name">Master Trainer, OOP C++ &amp; Java</p></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-divider"></div>
-  <div class="footer-name">Dr. S. Pitchumani Angayarkanni</div>
-  <div class="footer-role">Professor · AVIT · Tamil Nadu, India · AI Fellows Candidate Portfolio 2026</div>
-  <ul class="footer-links">
-    <li><a href="mailto:pitchumca@gmail.com">Email</a></li>
-    <li><a href="https://scholar.google.com/citations?user=cErrEyIAAAAJ&hl=en" target="_blank">Scholar</a></li>
-    <li><a href="https://orcid.org/0000-0001-9621-190X" target="_blank">ORCID</a></li>
-    <li><a href="https://github.com/angayarkannipitchumani" target="_blank">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/dr-pitchumani-angayarkanni-s-89aa47168/" target="_blank">LinkedIn</a></li>
-    <li><a href="https://medium.com/@angayarkanni.s" target="_blank">Medium</a></li>
-  </ul>
-  <div class="footer-copy">© 2026 Dr. S. Pitchumani Angayarkanni · Higher Education AI Fellows</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-name">Dr. S. Pitchumani Angayarkanni</p>
+        <p class="footer-role">Professor, CSE · AVIT, VMRF, Chennai · Google HE Faculty AI Fellow 2026 · IEEE Senior Member</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="mailto:pitchumca@gmail.com">Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=cErrEyIAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
+        <li><a href="https://orcid.org/0000-0001-9621-190X" target="_blank" rel="noopener">ORCID</a></li>
+        <li><a href="https://github.com/angayarkannipitchumani" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/dr-pitchumani-angayarkanni-s-89aa47168/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://medium.com/@angayarkanni.s" target="_blank" rel="noopener">Medium</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">© 2026 Dr. S. Pitchumani Angayarkanni</p>
+  </div>
 </footer>
 
-<script>
-// Intersection Observer for scroll animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.tl-entry, .pub-item').forEach((el, i) => {
-  el.style.transitionDelay = `${(i % 4) * 0.08}s`;
-  observer.observe(el);
-});
-
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-</script>
 </body>
 </html>
